@@ -1,15 +1,19 @@
 const express = require('express')
 const axios = require('axios')
 const app = express()
+const cors = require('cors')
 const port = process.env.PORT || 3003
 
-
+var corsOptions = {
+  origin: 'https://emmaspremiumservices.com/',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.get('/inmate', (req, res) => {
+app.get('/inmate', cors(corsOptions), (req, res) => {
   const {inmateDin} = req.query;
   try {
     axios({
