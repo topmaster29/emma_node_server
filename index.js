@@ -5,7 +5,7 @@ const cors = require('cors')
 const port = process.env.PORT || 3003
 
 var corsOptions = {
-  origin: 'https://emmaspremiumservices.com/',
+  origin: 'https://emmaspremiumservices.com',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 
